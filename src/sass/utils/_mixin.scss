@@ -1,0 +1,16 @@
+@mixin flexDisplay($direction){
+    flex-direction: $direction;  
+};
+
+@mixin lgScreen{
+    @media screen and (min-width:700px){
+        @content
+    }
+    
+};
+
+@mixin smScreen{
+    @media screen and (max-width:470px){
+        @content
+    }
+}
