@@ -68,7 +68,7 @@ const Card = () => {
         {/* desktop */}
         <div className="hero__img hero--img--desktop">
           <img
-            className="image"
+            className="hero-image-desktop"
             src={heroDeksImage}
             alt="hero--image--desktop"
           />
@@ -78,7 +78,7 @@ const Card = () => {
       <div className="flex__item flex-item-2">
         <div className="layer">
           <div className="desktop__header">
-            <img className="desktop__logo" src={logo} alt="logo" />
+            <img className="desktop__logo" src={logo} alt="desktop_logo" />
           </div>
           <div className="content">
             <h1 className="text-1">WE'RE</h1>
