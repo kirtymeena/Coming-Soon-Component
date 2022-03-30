@@ -141,6 +141,13 @@
       cursor: pointer;
     }
 
+    .btn:active{
+      background-image: linear-gradient(hsl(0, 74%, 74%), hsl(0, 78%, 65%));
+      box-shadow: 5px 10px 15px 3px hsl(0, 24%, 83%);
+
+
+    }
+
     #input-box:focus {
       border: 2px solid hsl(0, 44%, 66%);
       outline: none;
