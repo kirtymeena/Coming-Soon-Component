@@ -4,6 +4,12 @@ footer{
     align-items: center;
 }
 
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .link{
     color:rgb(62, 62, 172);
     text-decoration: underline;
