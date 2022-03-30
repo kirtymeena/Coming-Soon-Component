@@ -1,7 +1,6 @@
 @use "../utils/mixin" as *;
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter&family=Josefin+Sans:wght@300&family=Lexend+Deca&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter&family=Josefin+Sans:wght@300;600&family=Lexend+Deca&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter&family=Josefin+Sans:wght@300;600&family=Lexend+Deca&display=swap");
 
 .flex__container {
   display: flex;
@@ -22,7 +21,7 @@
     }
   }
 
-  .hero--img--mobile {
+  .hero_mobile {
     margin-top: 1.3rem;
     img {
       object-fit: cover;
@@ -33,7 +32,7 @@
   }
 
   @include smScreen {
-    .hero--img--desktop {
+    .hero_desktop {
       display: none;
     }
   }
@@ -46,12 +45,12 @@
     .header {
       display: none;
     }
-    .hero--img--mobile {
+    .hero_mobile {
       display: none;
     }
 
-    .hero--img--desktop {
-      .hero-image-desktop {
+    .hero_desktop {
+      .hero_lg {
         margin-top: 0;
         width: 517px;
         height: 613px;
@@ -64,191 +63,181 @@
 // item2
 .flex-item-2 {
   .content {
-   
-    font-family: 'Josefin Sans', sans-serif;
-    font-size:22px;
-    margin-top:33px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 22px;
+    margin-top: 33px;
 
-    .text-1{
-        font-weight: 300;
+    .text-1 {
+      font-weight: 300;
+      color: hsl(0, 36%, 70%);
+    }
+    .text-2 {
+      font-weight: 600;
+      color: rgb(41 37 36);
+    }
+    .text-3 {
+      font-weight: 600;
+      color: rgb(41 37 36);
+    }
+    .text__para {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 10px;
+      text-align: center;
+      .para {
+        font-weight: 600;
         color: hsl(0, 36%, 70%);
-       
-    };
-    .text-2{
-        font-weight:600;
-        color:rgb(41 37 36);
-        
-
-    };
-    .text-3{
-        font-weight:600;
-        color:rgb(41 37 36);
+        font-size: 15px;
+        line-height: 1.5rem;
+      }
     }
-    .text__para{
-        margin-left:10px;
-        margin-right:10px;
-        margin-top: 10px;
-        text-align: center;
-        .para{
-            font-weight: 600;
-            color:hsl(0, 36%, 70%);
-            font-size:15px;
-            line-height: 1.5rem;
-        }
-    }
-    
   }
 
-  .input{
-      margin-top:3rem;
+  .input {
+    margin-top: 3rem;
     //   width:10rem;
     //   height:10rem;
 
-      #input-box{
-          width:22rem;
-          height:3rem;
-          position: relative;
-          border-radius: 25px;
-          padding-left:2rem;
-          border: 1px solid hsl(0, 36%, 70%);
-          background-color:hsl(0, 100%, 98%);
-          font-family:'Josefin Sans', sans-serif;
-          font-size: 16px;
-          
+    #input-box {
+      width: 22rem;
+      height: 3rem;
+      position: relative;
+      border-radius: 25px;
+      padding-left: 2rem;
+      border: 1px solid hsl(0, 36%, 70%);
+      background-color: hsl(0, 100%, 98%);
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
+    }
+    #error-box {
+      width: 22rem;
+      height: 3rem;
+      position: relative;
+      border-radius: 25px;
+      padding-left: 2rem;
+      border: 1px solid hsl(0, 36%, 70%);
+      background-color: hsl(0, 100%, 98%);
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
 
+      @include smScreen {
+        width: 17rem;
       }
-      #error-box{
-        width:22rem;
-          height:3rem;
-          position: relative;
-          border-radius: 25px;
-          padding-left:2rem;
-          border: 1px solid hsl(0, 36%, 70%);
-          background-color:hsl(0, 100%, 98%);
-          font-family:'Josefin Sans', sans-serif;
-          font-size: 16px;
+    }
+    .btn {
+      position: absolute;
+      width: 6rem;
+      height: 3rem;
+      border-radius: 35px;
+      margin-left: 18rem;
+      border: 0;
+      z-index: 50;
+      background-image: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    }
 
-          @include smScreen{
-              width:17rem
-          }
-      }
-      .btn{
-          position: absolute;
-          width:6rem;
-          height: 3rem;
-          border-radius: 35px ;
-          margin-left:18rem;
-          border:0;
-          z-index: 50;
-          background-image: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-      }
+    .btn:hover {
+      background-image: linear-gradient(hsl(0, 80%, 94%), hsl(0, 82%, 83%));
+      box-shadow: 5px 10px 15px 3px hsl(0, 24%, 83%);
+      cursor: pointer;
+    }
 
-      .btn:hover{
-          background-image: linear-gradient(hsl(0, 80%, 94%),hsl(0, 82%, 83%)) ;
-          box-shadow: 5px 10px 15px 3px  hsl(0, 24%, 83%);
-          cursor: pointer;
-        }
-
-        #input-box:focus{
-            border:2px solid hsl(0, 44%, 66%);
-            outline: none;
-        }
-        #error-box{
-          border:2px solid  hsl(0, 93%, 68%);
-          outline: none;
-        }
+    #input-box:focus {
+      border: 2px solid hsl(0, 44%, 66%);
+      outline: none;
+    }
+    #error-box {
+      border: 2px solid hsl(0, 93%, 68%);
+      outline: none;
+    }
   }
 
   @include smScreen {
-      background-image: linear-gradient(hsl(0, 0%, 100%),hsl(0, 100%, 98%));;
-      
-      .content{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding-bottom: 6rem;
-      }
+    background-image: linear-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 6rem;
+    }
     .desktop__logo {
       display: none;
     }
-    .input{
-        #input-box{
-            width:17rem;
-            height:3rem;
-        }
-        .btn{
-            position: absolute;
-            width:4rem;
-            height: 3rem;
-            margin-left:13rem;
-        }
+    .input {
+      #input-box {
+        width: 17rem;
+        height: 3rem;
+      }
+      .btn {
+        position: absolute;
+        width: 4rem;
+        height: 3rem;
+        margin-left: 13rem;
+      }
     }
-   
   }
 
   @include lgScreen {
     display: flex;
     min-width: 828px;
     position: relative;
-    background-image:linear-gradient(hsl(0, 0%, 100%),hsl(0, 100%, 98%));
+    background-image: linear-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 
-    .layer{
-        width:100%;
-        height:100%;
-        position: absolute;
-        background-image: url("../../images/bg-pattern-desktop.svg");
-
-
-    }    
+    .layer {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: url("../../images/bg-pattern-desktop.svg");
+    }
     .desktop__logo {
       margin: 46px 0 0 161px;
     }
 
-    .content{
+    .content {
       position: absolute;
-      width:28rem;
-      margin-top:4rem;
-      margin-right:10rem;
-      margin-left:10rem;
-      .text-1 ,.text-2, .text-3{
-         letter-spacing:9px;
-         font-size:49px;
+      width: 28rem;
+      margin-top: 4rem;
+      margin-right: 10rem;
+      margin-left: 10rem;
+      .text-1,
+      .text-2,
+      .text-3 {
+        letter-spacing: 9px;
+        font-size: 49px;
       }
-      .para{
-          margin-top:2rem;
-          text-align: left;
-      }  
-        
+      .para {
+        margin-top: 2rem;
+        text-align: left;
+      }
     }
   }
 }
 
-.error{
-  margin-top:10px;
-  margin-left:17px;
-  font-family: 'Josefin Sans', sans-serif;
-  color:hsl(0, 93%, 68%);
-  font-size:15px;
-  font-weight: 600
-  ;
+.error {
+  margin-top: 10px;
+  margin-left: 17px;
+  font-family: "Josefin Sans", sans-serif;
+  color: hsl(0, 93%, 68%);
+  font-size: 15px;
+  font-weight: 600;
 }
-.warning{
+.warning {
   position: absolute;
   border-radius: 50%;
   background-color: hsl(0, 72%, 62%);
-  width:20px;
+  width: 20px;
   height: 20px;
   text-align: center;
-  color:whitesmoke;
+  color: whitesmoke;
   font-size: 15px;
-  font-weight:600;
-  padding-top:2px;
-  margin-left:15rem;
-  margin-top:0.8rem;
+  font-weight: 600;
+  padding-top: 2px;
+  margin-left: 15rem;
+  margin-top: 0.8rem;
   z-index: 50;
 
-  @include smScreen{
-    margin-left:12rem
+  @include smScreen {
+    margin-left: 12rem;
   }
 }

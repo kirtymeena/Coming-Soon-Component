@@ -4,32 +4,29 @@ import heroDeksImage from "../images/hero-desktop.jpg";
 import logo from "../images/logo.svg";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-
-
 const Card = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [id, setId] = useState("input-box");
 
-  const [email,setEmail]  = useState('')
-  const[error,setError] = useState('')
-  const[id,setId] = useState('input-box')
+  useEffect(() => {
+    console.log(error);
+  });
 
-  useEffect(()=>{
-    console.log(error)
-    
-  })
-
-  const handleClick=()=>{
-   
-    const validate = email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    if(validate===null){
-      setError("Please provide a valid email")
-      setId("error-box")
+  const handleClick = () => {
+    const validate = email
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+    if (validate === null) {
+      setError("Please provide a valid email");
+      setId("error-box");
+    } else {
+      setId("input-box");
+      setError("");
     }
-    else{
-      setId("input-box")
-      setError("")
-    }
-   
-  }
+  };
 
   return (
     <div className="flex__container">
@@ -62,15 +59,15 @@ const Card = () => {
           </svg>{" "}
         </div>
         {/* mobile */}
-        <div className="hero__img hero--img--mobile">
-          <img src={heroImage} alt="hero-image-mobile" />
+        <div className="hero_mobile">
+          <img src={heroImage} alt="hero-mobile" />
         </div>
         {/* desktop */}
-        <div className="hero__img hero--img--desktop">
+        <div className=" hero_desktop">
           <img
-            className="hero-image-desktop"
+            className="hero_lg"
             src={heroDeksImage}
-            alt="hero--image--desktop"
+            alt="hero-desktop"
           />
         </div>
       </div>
@@ -92,15 +89,25 @@ const Card = () => {
               </p>
             </div>
             <div className="input">
-              <button onClick={handleClick} className="btn"  type="submit"><MdKeyboardArrowRight size={32} color={"whitesmoke"}/></button>
-              {id==="error-box"?<div className="warning">!</div>:""}
-              <input onChange={(e)=>setEmail(e.target.value)} id={id} type="email" placeholder="Email Address" width="50px"  height="48rem"/>
-              {error?
-              <div>
-              <p className="error">{error}</p>
-              </div>
-              :""}
-
+              <button onClick={handleClick} className="btn" type="submit">
+                <MdKeyboardArrowRight size={32} color={"whitesmoke"} />
+              </button>
+              {id === "error-box" ? <div className="warning">!</div> : ""}
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                id={id}
+                type="email"
+                placeholder="Email Address"
+                width="50px"
+                height="48rem"
+              />
+              {error ? (
+                <div>
+                  <p className="error">{error}</p>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
