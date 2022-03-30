@@ -89,6 +89,8 @@
         color: hsl(0, 36%, 70%);
         font-size: 15px;
         line-height: 1.5rem;
+        margin-right:10px;
+        margin-left:10px;
       }
     }
   }
@@ -180,7 +182,7 @@
         position: absolute;
         width: 4rem;
         height: 3rem;
-        margin-left: 15rem;
+        margin-left: 14rem;
       }
     }
   }
@@ -246,6 +248,6 @@
 
   @include smScreen {
     margin-left: 12rem;
-    padding-top:2px
+    padding-top:3px
   }
 }
